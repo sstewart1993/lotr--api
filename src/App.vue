@@ -20,13 +20,16 @@
 
 <script>
 import {eventBus} from './main'
-import listOfCharacters from "./components/listOfCharacters"
+// import listOfCharacters from "./components/listOfCharacters"
 
 
 export default {
   name: 'App',
   data(){
     return{
+      api_key: 'wA9x06TjC7oGabws_5tn',
+      url_base: 'https://the-one-api.dev/v2/character',
+      query: ''
 
     }
   },
@@ -34,7 +37,7 @@ export default {
   },
   // promises to the api call go here
   mounted(){
-    fetch('https://the-one-api.dev/v2/character')
+    fetch(`${this.url_base}character?q=${this.query}&APPID=${this.api_key}`)
   .then(res => res.json())
   .then(characters => this.characters = characters)
 

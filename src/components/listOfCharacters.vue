@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import listItem from './listItem'
+// import listItem from './listItem'
 
 export default {
     name: "listOfCharacters",
     props: ["characters"],
     components: {
-        "list-item":listItem
+        // "list-item":listItem
     }
 
 }
